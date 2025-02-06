@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Loop Crash</title>
+    <title>Chromebook Crasher</title>
 </head>
 <body>
-    <h1>Click the button to crash this tab!</h1>
-    <button onclick="crashBrowser()">Crash Now</button>
+    <h1>Click the button to CRASH this tab!</h1>
+    <button onclick="crashBrowser()">CRASH NOW</button>
 
     <script>
         function crashBrowser() {
+            // Create an infinite loop that opens new windows & fills up memory
             while (true) {
-                console.log("Crashing...");
+                window.open("https://google.com", "_blank");
+                let spam = document.createElement('div');
+                document.body.appendChild(spam);
+                console.log("Spamming tabs & memory...");
             }
         }
     </script>
