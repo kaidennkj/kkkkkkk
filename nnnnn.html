@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chromebook Crasher</title>
+    <title>Freeze the Browser</title>
 </head>
 <body>
-    <h1>Click the button to CRASH this tab!</h1>
-    <button onclick="crashBrowser()">CRASH NOW</button>
+    <h1>Click the button to freeze this page!</h1>
+    <button onclick="freezePage()">Freeze Now</button>
 
     <script>
-        function crashBrowser() {
-            // Create an infinite loop that opens new windows & fills up memory
+        function freezePage() {
+            let x = 0;
             while (true) {
-                let arr = [];
-while (true) {
-    arr.push(new Array(1000000).fill("CRASH"));
-}
-
-                let spam = document.createElement('div');
-                document.body.appendChild(spam);
-                console.log("Spamming tabs & memory...");
+                x++;
             }
         }
     </script>
