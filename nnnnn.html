@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freeze the Browser</title>
+    <title>Crash the Page</title>
 </head>
 <body>
-    <h1>Click the button to freeze this page!</h1>
-    <button onclick="freezePage()">Freeze Now</button>
+    <h1>Click the button to crash this page!</h1>
+    <button onclick="triggerCrash()">Crash Now</button>
 
     <script>
-        function freezePage() {
-            let x = 0;
-            while (true) {
-                x++;
-            }
+        function triggerCrash() {
+            // Set localStorage value before the page is unloaded
+            onbeforeunload = function() {
+                localStorage.x = 1;
+            };
+
+            // Infinite reload loop every second
+            setTimeout(function() {
+                while (1) {
+                    location.reload(true);
+                }
+            }, 1000);
         }
     </script>
 </body>
